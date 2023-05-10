@@ -1,0 +1,7 @@
+Mango,85
+Banana,60
+Woodapple,40
+Orange,100
+Mangoos,58
+
+Total value of the items : 258
