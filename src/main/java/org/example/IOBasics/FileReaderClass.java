@@ -17,7 +17,7 @@ public class FileReaderClass {
         try (BufferedReader fileReader = new BufferedReader(new FileReader(exampleClass.INPUT_FILE_PATH));
              FileWriter outputFileWriter = new FileWriter(exampleClass.OUTPUT_FILE_PATH);) {
             /*
-             * try with resources helps to close the reader immediately after the block is finished
+             * try with resources helps to close the reader and writer immediately after the block is finished
              * */
             int total = 0;
             String line = fileReader.readLine();
