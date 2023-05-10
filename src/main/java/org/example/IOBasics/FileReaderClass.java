@@ -1,7 +1,5 @@
 package org.example.IOBasics;
 
-import org.example.CustomExceptions.CustomException;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
