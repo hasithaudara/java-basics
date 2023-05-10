@@ -16,23 +16,18 @@ public class FileReaderClass {
 
         try (BufferedReader fileReader = new BufferedReader(new FileReader(exampleClass.INPUT_FILE_PATH));
              FileWriter outputFileWriter = new FileWriter(exampleClass.OUTPUT_FILE_PATH);) {
-            /*
-             * try with resources helps to close the reader and writer immediately after the block is finished
-             * */
             int total = 0;
-            String line = fileReader.readLine();
+            String line = null;
             List<String> readLines = new ArrayList<>();
 
-            while (line != null) { // Checking if the line is not empty
-                readLines.add(line); // if not it get added to the Array List object created as readLines
-                line = fileReader.readLine(); // and the reader reads next line and assigns it to line variable
-
+            while ((line = fileReader.readLine()) != null) {
+                readLines.add(line);
                 String lineValue = (line != null) ? line.split(",")[1] : "0";
                 total += Integer.parseInt(lineValue);
             }
 
+            //
             for (String item : readLines) {
-                // writes line by line until the ArrayList ends with a ""
                 outputFileWriter.write(item + System.lineSeparator());
             }
             outputFileWriter.write(System.lineSeparator());

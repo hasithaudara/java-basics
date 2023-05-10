@@ -1,6 +1,7 @@
 package org.example.StringClassExamples;
 
 import org.example.CustomExceptions.CustomException;
+import org.example.Util.ExceptionMessages;
 
 import java.util.Scanner;
 
@@ -22,7 +23,7 @@ public class PalindromeChecker {
                     System.out.println(ispalindromePhrase);
                     System.out.println();
                 } else {
-                    throw new CustomException("Invalid input!! Please enter a valid input.");
+                    throw new CustomException(ExceptionMessages.INVALID_CHARACTER_FOUND.getExceptionMessage());
                 }
 
                 System.out.println("Do you want to continue? (y/n)");
@@ -40,7 +41,7 @@ public class PalindromeChecker {
         }
     }
 
-    protected static String isPalindrome(String originalWord, String reversedWord) {
+    static String isPalindrome(String originalWord, String reversedWord) {
         if (originalWord.equals(reversedWord)) {
             return "Given is a Palindrome";
         } else {
@@ -48,7 +49,7 @@ public class PalindromeChecker {
         }
     }
 
-    protected static boolean isContinue(String inputValue) throws CustomException {
+    static boolean isContinue(String inputValue) throws CustomException {
         if (inputValue.equals("y")) {
             return true;
         } else if (inputValue.equals("n")) {
