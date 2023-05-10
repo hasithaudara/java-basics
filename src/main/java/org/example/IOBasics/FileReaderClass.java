@@ -1,5 +1,7 @@
 package org.example.IOBasics;
 
+import org.example.CustomExceptions.CustomException;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -30,7 +32,6 @@ public class FileReaderClass {
                 String lineValue = (line != null) ? line.split(",")[1] : "0";
                 total += Integer.parseInt(lineValue);
             }
-
 
             for (String item : readLines) {
                 // writes line by line until the ArrayList ends with a ""
