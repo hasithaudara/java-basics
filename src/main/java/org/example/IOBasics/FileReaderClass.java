@@ -18,17 +18,10 @@ public class FileReaderClass {
              FileWriter outputFileWriter = new FileWriter(exampleClass.OUTPUT_FILE_PATH);) {
             int total = 0;
             String line = null;
-            List<String> readLines = new ArrayList<>();
-
             while ((line = fileReader.readLine()) != null) {
-                readLines.add(line);
                 String lineValue = (line != null) ? line.split(",")[1] : "0";
                 total += Integer.parseInt(lineValue);
-            }
-
-            //
-            for (String item : readLines) {
-                outputFileWriter.write(item + System.lineSeparator());
+                outputFileWriter.write(line.trim() + System.lineSeparator());
             }
             outputFileWriter.write(System.lineSeparator());
             outputFileWriter.write("Total value of the items : " + total);
