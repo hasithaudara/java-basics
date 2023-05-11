@@ -1,6 +1,6 @@
-package org.example.StringClassExamples;
+package org.example.StringClassExample;
 
-import org.example.CustomExceptions.CustomException;
+import org.example.CustomException.CustomException;
 import org.example.Util.ExceptionMessages;
 
 import java.util.Scanner;

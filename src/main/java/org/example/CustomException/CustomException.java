@@ -1,4 +1,4 @@
-package org.example.CustomExceptions;
+package org.example.CustomException;
 
 public class CustomException extends Exception {
     public CustomException(String customErrorMessage) {
