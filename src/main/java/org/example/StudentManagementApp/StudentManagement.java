@@ -15,23 +15,20 @@ public class StudentManagement {
         Student student_2 = new Student("Thor", new ArrayList<>());
         Student student_3 = new Student("Peter", new ArrayList<>());
 
-        Course course_1 = new Course(1, "Mathematics");
-        Course course_2 = new Course(2, "Chemistry");
-        Course course_3 = new Course(3, "Physics");
-
-
         StudentManagement studentManagement = new StudentManagement();
         studentList = new HashMap<>();
         studentManagement.addStudent(student_1);
         studentManagement.addStudent(student_2);
         studentManagement.addStudent(student_3);
-
         studentManagement.displayStudentList();
 
+        Course course_1 = new Course(1, "Mathematics");
+        Course course_2 = new Course(2, "Chemistry");
+        Course course_3 = new Course(3, "Physics");
         studentManagement.addCourseToStudent(1, course_1);
         studentManagement.addCourseToStudent(1, course_2);
-
-        studentManagement.displayCoursesForTheStudent(1);
+        studentManagement.addCourseToStudent(2, course_3);
+        studentManagement.displayCoursesForTheStudent(3);
     }
 
     private void addStudent(Student student) {
@@ -59,9 +56,13 @@ public class StudentManagement {
 
     private void displayCoursesForTheStudent(int id) {
         ArrayList<Course> courseList = studentList.get(id).getEnrolledCourse();
-        System.out.println(studentList.get(id).getName() + " enrolled in following courses");
-        for (int i = 0; i < courseList.size(); i++) {
-            System.out.println(courseList.get(i).getCourseName());
+        if (courseList.size() != 0) {
+            System.out.println(studentList.get(id).getName() + " enrolled in following courses,");
+            for (int i = 0; i < courseList.size(); i++) {
+                System.out.println(courseList.get(i).getCourseName());
+            }
+        } else {
+            System.out.println(studentList.get(id).getName() + " has not enrolled in eny course.");
         }
     }
 }
