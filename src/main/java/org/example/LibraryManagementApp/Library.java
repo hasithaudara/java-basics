@@ -45,14 +45,14 @@ public class Library {
     }
 
     public void borrowingBook(Book book, Member member) {
-        if (book.isBorrowed() == false) {
+        if (!book.isBorrowed()) {
             member.getBorrowedBooks().add(book);
             book.setBorrowed(true);
         }
     }
 
     public void returningBook(Book book, Member member) {
-        if (book.isBorrowed() == true){
+        if (book.isBorrowed()){
             member.getBorrowedBooks().remove(book);
             book.setBorrowed(false);
         }
