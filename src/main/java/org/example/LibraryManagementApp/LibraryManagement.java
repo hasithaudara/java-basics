@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class LibraryManagement {
     public static void main(String[] args) {
-        Library library = new Library(new ArrayList<Book>(), new ArrayList<Member>());
+        Library library = new Library(new ArrayList<>(), new ArrayList<>());
         LibraryManagement libraryManagement = new LibraryManagement();
 
         // Creating and adding books to the library
@@ -20,9 +20,9 @@ public class LibraryManagement {
         library.addBook(book_5);
 
         // Creating and adding members to the library
-        Member member_1 = new Member(1, "Kevin", new ArrayList<Book>());
-        Member member_2 = new Member(2, "Thor", new ArrayList<Book>());
-        Member member_3 = new Member(3, "Peter", new ArrayList<Book>());
+        Member member_1 = new Member(1, "Kevin", new ArrayList<>());
+        Member member_2 = new Member(2, "Thor", new ArrayList<>());
+        Member member_3 = new Member(3, "Peter", new ArrayList<>());
         library.addMember(member_1);
         library.addMember(member_2);
         library.addMember(member_3);
