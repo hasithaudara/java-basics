@@ -16,12 +16,17 @@ public class ComparatorExample {
         List<Person> personList = Arrays.asList(person_1, person_2, person_3, person_4, person_5);
 
 //        Using Comparable
-        Collections.sort(personList);
-        System.out.println("Before Comparator " + personList);
-
-//        using comparator
-//        PersonComparator personComparator = new PersonComparator();
-//        Collections.sort(personList,personComparator);
+//        Collections.sort(personList);
 //        System.out.println(personList);
+
+//        Using comparator
+//        PersonAgeComparator personAgeComparator = new PersonAgeComparator();
+//        Collections.sort(personList, personAgeComparator);
+//        System.out.println(personList);
+
+        PersonNameComparator personNameComparator = new PersonNameComparator();
+        PersonAgeComparator personAgeComparator = new PersonAgeComparator();
+        Collections.sort(personList, personNameComparator.thenComparing(personAgeComparator));
+        System.out.println(personList);
     }
 }

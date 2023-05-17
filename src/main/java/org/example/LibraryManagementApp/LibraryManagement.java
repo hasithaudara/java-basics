@@ -27,23 +27,25 @@ public class LibraryManagement {
         library.addMember(member_2);
         library.addMember(member_3);
 
+        libraryManagement.displayBookList(library);
+        System.out.println();
         // Member borrowing a book
         library.borrowingBook(book_2, member_1);
         libraryManagement.displayBookList(library);
-        libraryManagement.displayMembersList(library);
-
+//        libraryManagement.displayMembersList(library);
+        System.out.println();
         // Member returning a book
-        library.returningBook(book_2,member_1);
+        library.returningBook(book_2, member_1);
         libraryManagement.displayBookList(library);
-        libraryManagement.displayMembersList(library);
+//        libraryManagement.displayMembersList(library);
 
         // Removing a book from the library
-        library.removeBook(book_2);
-        libraryManagement.displayBookList(library);
-
-        // Removing a member from the library
-        library.removeMember(member_2);
-        libraryManagement.displayMembersList(library);
+//        library.removeBook(book_2);
+//        libraryManagement.displayBookList(library);
+//
+//        // Removing a member from the library
+//        library.removeMember(member_2);
+//        libraryManagement.displayMembersList(library);
     }
 
     private void displayBookList(Library library) {
@@ -53,10 +55,12 @@ public class LibraryManagement {
         }
     }
 
-    private  void displayMembersList(Library library){
+    private void displayMembersList(Library library) {
         System.out.println("List of all the Members :");
-        for (int i = 0; i< library.getListOfMembers().size();i++){
+        for (int i = 0; i < library.getListOfMembers().size(); i++) {
             System.out.println(library.getListOfMembers().get(i));
         }
     }
+
+
 }

@@ -28,7 +28,11 @@ public class Person implements Comparable<Person> {
 
     @Override
     public int compareTo(Person person) {
-        return Integer.compare(getAge(), person.getAge());
+
+        return person.getName().compareTo(this.getName());
+//        return this.getAge() - person.getAge() ; // This make the list to sort ascending order - numerals
+//        return person.getAge() - this.getAge(); // This make the list to sort descending order - numerals
+//        return Integer.compare(person.getAge(),this.getAge());
     }
 
 
